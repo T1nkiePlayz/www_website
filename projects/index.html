@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects — Ashton Tink</title>
+    <meta name="description" content="Games, software, experiments and other projects by Ashton Tink.">
+    <link rel="canonical" href="https://www.ashtontink.com/projects/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .page-hero { padding: 150px 0 70px; max-width: 850px; }
+        .page-hero h1 { margin: 18px 0 20px; font-size: clamp(2.7rem, 7vw, 5rem); line-height: 1; letter-spacing: -.05em; }
+        .page-hero h1 span { background: linear-gradient(135deg, var(--text), var(--accent-light)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .page-hero p { max-width: 700px; color: var(--muted); font-size: 1.08rem; line-height: 1.8; }
+        .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+        .project-card { display: flex; flex-direction: column; min-height: 330px; padding: 28px; text-decoration: none; color: inherit; }
+        .project-card:hover { transform: translateY(-4px); }
+        .project-icon { width: 52px; height: 52px; display: grid; place-items: center; margin-bottom: 26px; border: 1px solid var(--border); border-radius: 14px; background: rgba(124,92,255,.12); color: var(--accent-light); font-family: 'JetBrains Mono', monospace; font-weight: 600; }
+        .project-card h2 { margin: 0 0 10px; font-size: 1.45rem; }
+        .project-card p { margin: 0; color: var(--muted); line-height: 1.7; }
+        .project-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+        .tag { padding: 6px 10px; border: 1px solid var(--border); border-radius: 999px; color: var(--muted); background: rgba(255,255,255,.025); font-family: 'JetBrains Mono', monospace; font-size: .72rem; }
+        .project-link { margin-top: auto; padding-top: 28px; color: var(--accent-light); font-family: 'JetBrains Mono', monospace; font-size: .82rem; }
+        .back-link { display: inline-flex; gap: 8px; margin-top: 60px; color: var(--muted); text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: .82rem; }
+        .back-link:hover { color: var(--text); }
+        @media (max-width: 700px) { .project-grid { grid-template-columns: 1fr; } .page-hero { padding-top: 120px; } }
+    </style>
+</head>
+<body>
+    <div class="background-glow"></div>
+    <nav class="navbar">
+        <a class="logo" href="/">ashton<span>.tink</span></a>
+        <div class="nav-links">
+            <a href="/projects/">Projects</a>
+            <a href="/#latest">Latest</a>
+            <a href="https://me.ashtontink.com">About Me</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="page-hero">
+            <div class="section-label">// projects</div>
+            <h1>Things I'm <span>building.</span></h1>
+            <p>A collection of games, software projects and experiments I'm working on — from long-term game development to smaller ideas and technical projects.</p>
+        </section>
+
+        <section>
+            <div class="project-grid">
+                <a class="card project-card" href="/projects/aetheria/">
+                    <div class="project-icon">01</div>
+                    <div>
+                        <h2>Aetheria</h2>
+                        <p>A massive ARPG multiplayer 2D top-down game built around exploration, combat, progression and a living world.</p>
+                    </div>
+                    <div class="project-meta"><span class="tag">Godot</span><span class="tag">C#</span><span class="tag">Multiplayer</span><span class="tag">ARPG</span></div>
+                    <div class="project-link">View project →</div>
+                </a>
+
+                <a class="card project-card" href="/projects/embermark-forgery/">
+                    <div class="project-icon">02</div>
+                    <div>
+                        <h2>Embermark Forgery</h2>
+                        <p>A smaller game project focused on building, experimenting and learning through a complete release-sized project.</p>
+                    </div>
+                    <div class="project-meta"><span class="tag">Godot</span><span class="tag">C#</span><span class="tag">Game Dev</span></div>
+                    <div class="project-link">View project →</div>
+                </a>
+            </div>
+        </section>
+
+        <a class="back-link" href="/">← Back to home</a>
+    </main>
+
+    <footer class="container footer">
+        <div>© 2026 Ashton Tink</div>
+        <div><a href="https://github.com/T1nkiePlayz">GitHub</a><span> · </span><a href="https://me.ashtontink.com">About Me</a></div>
+    </footer>
+</body>
+</html>
