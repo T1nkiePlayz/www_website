@@ -2,81 +2,686 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
     <title>Projects — Ashton Tink</title>
-    <meta name="description" content="Games, software, experiments and other projects by Ashton Tink.">
-    <link rel="canonical" href="https://www.ashtontink.com/projects/">
+
+    <meta
+        name="description"
+        content="Games, software projects and experiments by Ashton Tink."
+    >
+
+    <link
+        rel="canonical"
+        href="https://www.ashtontink.com/projects/"
+    >
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
     <link rel="stylesheet" href="/css/style.css">
+
     <style>
-        .page-hero { padding: 150px 0 70px; max-width: 850px; }
-        .page-hero h1 { margin: 18px 0 20px; font-size: clamp(2.7rem, 7vw, 5rem); line-height: 1; letter-spacing: -.05em; }
-        .page-hero h1 span { background: linear-gradient(135deg, var(--text), var(--accent-light)); -webkit-background-clip: text; background-clip: text; color: transparent; }
-        .page-hero p { max-width: 700px; color: var(--muted); font-size: 1.08rem; line-height: 1.8; }
-        .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
-        .project-card { display: flex; flex-direction: column; min-height: 330px; padding: 28px; text-decoration: none; color: inherit; }
-        .project-card:hover { transform: translateY(-4px); }
-        .project-icon { width: 52px; height: 52px; display: grid; place-items: center; margin-bottom: 26px; border: 1px solid var(--border); border-radius: 14px; background: rgba(124,92,255,.12); color: var(--accent-light); font-family: 'JetBrains Mono', monospace; font-weight: 600; }
-        .project-card h2 { margin: 0 0 10px; font-size: 1.45rem; }
-        .project-card p { margin: 0; color: var(--muted); line-height: 1.7; }
-        .project-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
-        .tag { padding: 6px 10px; border: 1px solid var(--border); border-radius: 999px; color: var(--muted); background: rgba(255,255,255,.025); font-family: 'JetBrains Mono', monospace; font-size: .72rem; }
-        .project-link { margin-top: auto; padding-top: 28px; color: var(--accent-light); font-family: 'JetBrains Mono', monospace; font-size: .82rem; }
-        .back-link { display: inline-flex; gap: 8px; margin-top: 60px; color: var(--muted); text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: .82rem; }
-        .back-link:hover { color: var(--text); }
-        @media (max-width: 700px) { .project-grid { grid-template-columns: 1fr; } .page-hero { padding-top: 120px; } }
+
+        .projects-hero {
+            padding: 170px 0 85px;
+
+            max-width: 800px;
+        }
+
+        .projects-hero h1 {
+            margin: 18px 0 20px;
+
+            font-size: clamp(
+                3.2rem,
+                7vw,
+                5.8rem
+            );
+
+            line-height: 0.94;
+
+            letter-spacing: -0.065em;
+        }
+
+        .projects-hero h1 span {
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffffff,
+                    var(--accent-light)
+                );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            color: transparent;
+        }
+
+        .projects-hero p {
+            max-width: 650px;
+
+            margin: 0;
+
+            color: var(--muted);
+
+            font-size: 0.98rem;
+            line-height: 1.85;
+        }
+
+
+        /* =========================
+           PROJECT SHOWCASE
+           ========================= */
+
+        .project-showcase {
+            display: grid;
+
+            grid-template-columns:
+                1.1fr
+                0.9fr;
+
+            min-height: 490px;
+
+            overflow: hidden;
+
+            text-decoration: none;
+        }
+
+        .project-showcase + .project-showcase {
+            margin-top: 18px;
+        }
+
+        .project-showcase.reverse {
+            grid-template-columns:
+                0.9fr
+                1.1fr;
+        }
+
+        .project-showcase.reverse .project-art {
+            order: 2;
+        }
+
+
+        /* ART */
+
+        .project-art {
+            position: relative;
+
+            min-height: 420px;
+
+            display: flex;
+            align-items: flex-end;
+
+            padding: 30px;
+
+            overflow: hidden;
+
+            background:
+                radial-gradient(
+                    circle at 55% 42%,
+                    rgba(139, 108, 255, 0.25),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    140deg,
+                    #17152a,
+                    #090b11
+                );
+        }
+
+        .project-art.ember {
+            background:
+                radial-gradient(
+                    circle at 60% 45%,
+                    rgba(255, 118, 57, 0.18),
+                    transparent 27%
+                ),
+                radial-gradient(
+                    circle at 25% 75%,
+                    rgba(139, 108, 255, 0.10),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    140deg,
+                    #211615,
+                    #0b0b10
+                );
+        }
+
+        .project-art::before {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    rgba(255, 255, 255, 0.024) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(255, 255, 255, 0.024) 1px,
+                    transparent 1px
+                );
+
+            background-size: 48px 48px;
+        }
+
+        .project-art-word {
+            position: relative;
+            z-index: 1;
+
+            color: rgba(255, 255, 255, 0.065);
+
+            font-size: clamp(
+                3.5rem,
+                8vw,
+                7rem
+            );
+
+            font-weight: 800;
+
+            line-height: 0.8;
+
+            letter-spacing: -0.09em;
+        }
+
+
+        /* AETHERIA ORB */
+
+        .project-art-orb {
+            position: absolute;
+
+            top: 50%;
+            left: 50%;
+
+            width: 145px;
+            height: 145px;
+
+            border: 1px solid rgba(
+                177,
+                156,
+                255,
+                0.32
+            );
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(177, 156, 255, 0.18),
+                    transparent 65%
+                );
+
+            box-shadow:
+                0 0 80px rgba(
+                    139,
+                    108,
+                    255,
+                    0.16
+                );
+
+            transform:
+                translate(-50%, -55%);
+        }
+
+        .project-art-orb::before {
+            content: "";
+
+            position: absolute;
+
+            inset: -35px;
+
+            border: 1px solid rgba(
+                177,
+                156,
+                255,
+                0.14
+            );
+
+            border-radius: 50%;
+        }
+
+
+        /* COPY */
+
+        .project-copy {
+            padding: 48px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .project-number {
+            color: var(--accent-light);
+
+            font-family: var(--mono);
+            font-size: 0.63rem;
+            font-weight: 600;
+        }
+
+        .project-copy h2 {
+            margin: 12px 0 13px;
+
+            font-size: clamp(
+                2rem,
+                4vw,
+                3.1rem
+            );
+
+            line-height: 1;
+
+            letter-spacing: -0.055em;
+        }
+
+        .project-copy p {
+            margin: 0 0 25px;
+
+            color: var(--muted);
+
+            font-size: 0.88rem;
+            line-height: 1.8;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 7px;
+
+            margin-bottom: 28px;
+        }
+
+        .tag {
+            padding: 6px 9px;
+
+            border: 1px solid var(--border);
+            border-radius: 999px;
+
+            color: var(--text-soft);
+
+            background: rgba(
+                255,
+                255,
+                255,
+                0.025
+            );
+
+            font-family: var(--mono);
+            font-size: 0.58rem;
+        }
+
+        .project-status {
+            width: fit-content;
+
+            margin-bottom: 12px;
+
+            color: var(--muted);
+
+            font-family: var(--mono);
+            font-size: 0.6rem;
+
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .project-status::before {
+            content: "";
+
+            display: inline-block;
+
+            width: 5px;
+            height: 5px;
+
+            margin-right: 7px;
+
+            border-radius: 50%;
+
+            background: var(--green);
+
+            box-shadow:
+                0 0 10px rgba(
+                    85,
+                    217,
+                    138,
+                    0.5
+                );
+        }
+
+
+        /* =========================
+           BOTTOM NOTE
+           ========================= */
+
+        .all-projects-note {
+            margin-top: 80px;
+
+            padding: 30px;
+
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+
+            background: rgba(
+                255,
+                255,
+                255,
+                0.018
+            );
+        }
+
+        .all-projects-note p {
+            margin: 8px 0 0;
+
+            color: var(--muted);
+
+            font-size: 0.82rem;
+        }
+
+        .back {
+            display: inline-flex;
+
+            margin-top: 55px;
+
+            color: var(--muted);
+
+            font-family: var(--mono);
+            font-size: 0.65rem;
+
+            text-decoration: none;
+        }
+
+        .back:hover {
+            color: var(--text);
+        }
+
+
+        /* =========================
+           RESPONSIVE
+           ========================= */
+
+        @media (max-width: 800px) {
+
+            .project-showcase,
+            .project-showcase.reverse {
+                grid-template-columns: 1fr;
+            }
+
+            .project-showcase.reverse .project-art {
+                order: initial;
+            }
+
+            .project-art {
+                min-height: 300px;
+            }
+
+            .project-copy {
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .projects-hero {
+                padding-top: 145px;
+            }
+
+        }
+
     </style>
 </head>
+
+
 <body>
-    <div class="background-glow"></div>
-    <nav class="navbar">
-        <a class="logo" href="/">ashton<span>.tink</span></a>
-        <div class="nav-links">
-            <a href="/projects/">Projects</a>
-            <a href="/#latest">Latest</a>
-            <a href="https://me.ashtontink.com">About Me</a>
+
+<nav class="navbar">
+
+    <a class="logo" href="/">
+        ashton<span>.tink</span>
+    </a>
+
+    <div class="nav-links">
+
+        <a href="/projects/">
+            Projects
+        </a>
+
+        <a href="/#latest">
+            Latest
+        </a>
+
+        <a href="https://me.ashtontink.com">
+            About Me
+        </a>
+
+    </div>
+
+</nav>
+
+
+<main class="container">
+
+    <!-- HEADER -->
+
+    <section class="projects-hero">
+
+        <div class="section-label">
+            // projects
         </div>
-    </nav>
 
-    <main class="container">
-        <section class="page-hero">
-            <div class="section-label">// projects</div>
-            <h1>Things I'm <span>building.</span></h1>
-            <p>A collection of games, software projects and experiments I'm working on — from long-term game development to smaller ideas and technical projects.</p>
-        </section>
+        <h1>
+            Things I've
+            <span>made.</span>
+        </h1>
 
-        <section>
-            <div class="project-grid">
-                <a class="card project-card" href="/projects/aetheria/">
-                    <div class="project-icon">01</div>
-                    <div>
-                        <h2>Aetheria</h2>
-                        <p>A massive ARPG multiplayer 2D top-down game built around exploration, combat, progression and a living world.</p>
-                    </div>
-                    <div class="project-meta"><span class="tag">Godot</span><span class="tag">C#</span><span class="tag">Multiplayer</span><span class="tag">ARPG</span></div>
-                    <div class="project-link">View project →</div>
-                </a>
+        <p>
+            Games, experiments and software projects.
+            Some are long-term ideas, some are smaller
+            projects, and some exist because I wanted to
+            learn how something worked.
+        </p>
 
-                <a class="card project-card" href="/projects/embermark-forgery/">
-                    <div class="project-icon">02</div>
-                    <div>
-                        <h2>Embermark Forgery</h2>
-                        <p>A smaller game project focused on building, experimenting and learning through a complete release-sized project.</p>
-                    </div>
-                    <div class="project-meta"><span class="tag">Godot</span><span class="tag">C#</span><span class="tag">Game Dev</span></div>
-                    <div class="project-link">View project →</div>
-                </a>
+    </section>
+
+
+    <!-- AETHERIA -->
+
+    <section>
+
+        <a
+            class="card project-showcase"
+            href="/projects/aetheria/"
+        >
+
+            <div class="project-art">
+
+                <div class="project-art-orb"></div>
+
+                <div class="project-art-word">
+                    AETHERIA
+                </div>
+
             </div>
-        </section>
 
-        <a class="back-link" href="/">← Back to home</a>
-    </main>
 
-    <footer class="container footer">
-        <div>© 2026 Ashton Tink</div>
-        <div><a href="https://github.com/T1nkiePlayz">GitHub</a><span> · </span><a href="https://me.ashtontink.com">About Me</a></div>
-    </footer>
+            <div class="project-copy">
+
+                <div class="project-number">
+                    01 / GAME
+                </div>
+
+                <div class="project-status">
+                    In development
+                </div>
+
+                <h2>
+                    Aetheria
+                </h2>
+
+                <p>
+                    A massive ARPG multiplayer 2D
+                    top-down game built around exploration,
+                    combat, progression and a living world.
+                </p>
+
+                <div class="project-tags">
+
+                    <span class="tag">
+                        Godot
+                    </span>
+
+                    <span class="tag">
+                        C#
+                    </span>
+
+                    <span class="tag">
+                        Multiplayer
+                    </span>
+
+                    <span class="tag">
+                        ARPG
+                    </span>
+
+                </div>
+
+                <span class="button secondary">
+                    Explore project
+                    <span class="arrow">→</span>
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <!-- EMBERMARK -->
+
+        <a
+            class="card project-showcase reverse"
+            href="/projects/embermark-forgery/"
+        >
+
+            <div class="project-art ember">
+
+                <div class="project-art-word">
+                    EMBERMARK
+                </div>
+
+            </div>
+
+
+            <div class="project-copy">
+
+                <div class="project-number">
+                    02 / GAME
+                </div>
+
+                <div class="project-status">
+                    In development
+                </div>
+
+                <h2>
+                    Embermark Forgery
+                </h2>
+
+                <p>
+                    A smaller game project designed to
+                    experiment, learn and work towards a
+                    complete release-sized project before
+                    the much larger Aetheria.
+                </p>
+
+                <div class="project-tags">
+
+                    <span class="tag">
+                        Godot
+                    </span>
+
+                    <span class="tag">
+                        C#
+                    </span>
+
+                    <span class="tag">
+                        Game Dev
+                    </span>
+
+                </div>
+
+                <span class="button secondary">
+                    Explore project
+                    <span class="arrow">→</span>
+                </span>
+
+            </div>
+
+        </a>
+
+    </section>
+
+
+    <section class="all-projects-note">
+
+        <div class="section-label">
+            // more_to_come
+        </div>
+
+        <p>
+            This page will grow as I build more things.
+            Smaller tools, web projects and experiments
+            can live here alongside the games.
+        </p>
+
+    </section>
+
+
+    <a class="back" href="/">
+        ← Back to home
+    </a>
+
+</main>
+
+
+<footer class="container footer">
+
+    <div>
+        © 2026 Ashton Tink
+    </div>
+
+    <div class="footer-links">
+
+        <a href="https://github.com/T1nkiePlayz">
+            GitHub
+        </a>
+
+        <span>·</span>
+
+        <a href="mailto:support@ashtontink.com">
+            Contact
+        </a>
+
+        <span>·</span>
+
+        <a href="https://me.ashtontink.com">
+            About Me
+        </a>
+
+    </div>
+
+</footer>
+
 </body>
 </html>
