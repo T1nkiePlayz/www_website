@@ -492,6 +492,11 @@ line-height: 1.85;
 
 }
 
+.hero h1 {
+line-height: 1.02 !important;
+margin-bottom: 30px !important;
+}
+
 /* =========================
 PROSE
 ========================= */
